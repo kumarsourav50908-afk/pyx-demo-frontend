@@ -3,38 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PY-X — AI Co-Founder (Demo)</title>
+  <title>CREYEX — AI CO-FOUNDER (Demo)</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div id="app">
+
+    <!-- NAVBAR (thin, minimal) -->
     <header class="navbar">
-      <div class="brand">
-        <div class="logo">PY</div>
-        <div>
-          <div class="title">PY-X — AI Co-Founder</div>
-          <div class="subtitle">PY-X Plus • Premium demo</div>
-        </div>
+      <div class="nav-left"></div>
+
+      <!-- center logo (keeps navbar compact but logo centered) -->
+      <div class="nav-center">
+        <div class="logo">CR</div>
       </div>
 
       <div class="controls">
         <select id="modelSelect" class="model-select">
-          <option>pyx-3.5</option>
-          <option>pyx-4o</option>
-          <option>pyx-advanced</option>
+          <option>creyex-3.5</option>
+          <option>creyex-4o</option>
+          <option>creyex-advanced</option>
         </select>
         <div class="profile">Piyush</div>
       </div>
     </header>
 
     <main class="center-card">
+
+      <!-- TOP HERO: Center logo, slogan, 3 features -->
+      <div class="hero">
+        <div class="hero-logo">CR</div>
+        <div class="hero-slogan">Empower your startup’s journey — Introducing <strong>CREYEX</strong>, your AI Co-Founder.</div>
+
+        <div class="hero-features">
+          <div class="feat">Fast Idea Validation</div>
+          <div class="feat">CA-Grade Financials</div>
+          <div class="feat">Legal & Investor Advisory</div>
+        </div>
+      </div>
+
       <div class="card-top">
         <div class="card-title">Conversation</div>
         <div class="chips"><span>Priority</span><span>Longer context</span></div>
       </div>
 
       <section class="chat-area" id="chatArea" aria-live="polite">
-        <!-- Inviting banner - inserted by app.js as DOM element on load as well -->
+        <!-- inviting banner will be injected here by app.js -->
       </section>
 
       <div id="typing" class="typing" aria-hidden="true">
@@ -47,7 +61,7 @@
       </div>
     </main>
 
-    <footer class="footer-note">Demo uses canned replies for a reliable presentation.</footer>
+    <footer class="footer-note">Powered by advanced AI systems engineered for high accuracy and consistent founder-level results.</footer>
   </div>
 
   <script src="app.js"></script>
