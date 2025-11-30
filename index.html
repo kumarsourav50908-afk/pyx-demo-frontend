@@ -3,65 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CREYEX — AI CO-FOUNDER (Demo)</title>
+  <title>CREYEX — AI CO-FOUNDER (Ultra Premium Demo)</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="app-root">
 
-    <!-- NAVBAR (thin, minimal) -->
-    <header class="navbar">
-      <div class="nav-left"></div>
-
-      <!-- center logo (keeps navbar compact but logo centered) -->
-      <div class="nav-center">
-        <div class="logo">CR</div>
+    <!-- NAVBAR (minimal, centered logo) -->
+    <header class="navbar" role="banner" aria-label="CREYEX top bar">
+      <div class="nav-left" aria-hidden="true"></div>
+      <div class="nav-center" aria-hidden="true">
+        <div class="nav-logo" aria-hidden="true">CR</div>
       </div>
-
-      <div class="controls">
-        <select id="modelSelect" class="model-select">
+      <div class="controls" role="navigation" aria-label="model and profile">
+        <label for="modelSelect" class="visually-hidden">Choose model</label>
+        <select id="modelSelect" class="model-select" aria-label="Model selector">
           <option>creyex-3.5</option>
           <option>creyex-4o</option>
           <option>creyex-advanced</option>
         </select>
-        <div class="profile">Piyush</div>
+        <div class="profile" aria-hidden="true">Piyush</div>
       </div>
     </header>
 
-    <main class="center-card">
-
-      <!-- TOP HERO: Center logo, slogan, 3 features -->
-      <div class="hero">
-        <div class="hero-logo">CR</div>
-        <div class="hero-slogan">Empower your startup’s journey — Introducing <strong>CREYEX</strong>, your AI Co-Founder.</div>
-
-        <div class="hero-features">
-          <div class="feat">Fast Idea Validation</div>
-          <div class="feat">CA-Grade Financials</div>
-          <div class="feat">Legal & Investor Advisory</div>
-        </div>
-      </div>
-
+    <!-- Main floating card -->
+    <main class="center-card" role="main">
+      <!-- top row - Conversation label -->
       <div class="card-top">
         <div class="card-title">Conversation</div>
         <div class="chips"><span>Priority</span><span>Longer context</span></div>
       </div>
 
-      <section class="chat-area" id="chatArea" aria-live="polite">
-        <!-- inviting banner will be injected here by app.js -->
+      <!-- Chat area with centered hero (hero in DOM so no injection) -->
+      <section class="chat-area" id="chatArea" aria-live="polite" aria-label="Conversation area">
+        <div class="hero-in-chat" id="heroInChat" role="region" aria-label="CREYEX introduction">
+          <div class="hero-in-chat-left">
+            <div class="hero-logo">CR</div>
+          </div>
+          <div class="hero-in-chat-body">
+            <div class="hero-slogan">Empower your startup’s journey — Introducing <strong>CREYEX</strong>, your AI Co-Founder.</div>
+            <div class="hero-features" role="list" aria-label="Key features">
+              <div class="hero-chip" role="listitem">Fast Idea Validation</div>
+              <div class="hero-chip" role="listitem">CA-Grade Financials</div>
+              <div class="hero-chip" role="listitem">Legal &amp; Investor Advisory</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- messages appended below the hero -->
       </section>
 
-      <div id="typing" class="typing" aria-hidden="true">
+      <!-- typing indicator -->
+      <div id="typing" class="typing" aria-hidden="true" aria-live="off">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
       </div>
 
+      <!-- input -->
       <div class="input-row">
-        <input id="messageInput" placeholder="Type a message (e.g., I know video editing)" />
-        <button id="sendBtn" aria-label="Send">➤</button>
+        <label for="messageInput" class="visually-hidden">Message</label>
+        <input id="messageInput" aria-label="Type a message" placeholder="Type a message (e.g., I know video editing)" autocomplete="off" />
+        <button id="sendBtn" class="send-btn" aria-label="Send message" title="Send">➤</button>
       </div>
     </main>
 
-    <footer class="footer-note">Powered by advanced AI systems engineered for high accuracy and consistent founder-level results.</footer>
+    <footer class="footer-note" role="contentinfo">
+      Powered by advanced AI systems engineered for high accuracy and consistent founder-level results.
+    </footer>
   </div>
 
   <script src="app.js"></script>
