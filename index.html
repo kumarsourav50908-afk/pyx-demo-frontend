@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PY-X — AI Co-Founder (Demo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo">PY</div>
+        <div>
+          <div class="title">PY-X — AI Co-Founder</div>
+          <div class="subtitle">PY-X Plus • Premium demo</div>
+        </div>
+      </div>
+      <div class="controls">
+        <select id="modelSelect" class="model-select">
+          <option>pyx-3.5</option>
+          <option>pyx-4o</option>
+          <option>pyx-advanced</option>
+        </select>
+        <div class="profile">Piyush</div>
+      </div>
+    </header>
+
+    <main class="center-card">
+      <div class="card-top">
+        <div class="card-title">Conversation</div>
+        <div class="chips"><span>Priority</span><span>Longer context</span></div>
+      </div>
+
+      <section class="chat-area" id="chatArea" aria-live="polite">
+        <!-- messages inserted here -->
+      </section>
+
+      <div id="typing" class="typing" aria-hidden="true">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <div class="input-row">
+        <input id="messageInput" placeholder="Type a message (e.g., I know video editing)" />
+        <button id="sendBtn" aria-label="Send">➤</button>
+      </div>
+    </main>
+
+    <footer class="footer-note">Demo uses canned replies for a reliable presentation.</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
